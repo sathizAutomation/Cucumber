@@ -1,0 +1,58 @@
+[
+  {
+    "line": 1,
+    "elements": [
+      {
+        "line": 3,
+        "name": "Login Validation",
+        "description": "",
+        "id": "login;login-validation",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 11746887200,
+              "status": "passed"
+            },
+            "line": 5,
+            "name": "Test URl already launched",
+            "match": {
+              "location": "StepDefintionn.test_URl_already_launched()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 28600,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "user enters login credentials",
+            "match": {
+              "location": "StepDefintionn.user_enters_login_credentials()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 810476700,
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "closing browser",
+            "match": {
+              "location": "StepDefintionn.closing_browser()"
+            },
+            "keyword": "Then "
+          }
+        ]
+      }
+    ],
+    "name": "Login",
+    "description": "",
+    "id": "login",
+    "keyword": "Feature",
+    "uri": "login.feature"
+  }
+]
