@@ -1,8 +1,11 @@
 Feature: Login
 
-Scenario: Login Validation
+  Scenario: Login Validation
+    Given Test URl already launched
+    When user enters login credentials
+    Then closing browser
 
-Given Test URl already launched
-When user enters login credentials
-Then closing browser
-
+  Scenario: Login Validation
+    Given Test URl already launched
+    When user enters login credentials
+    Then closing browser

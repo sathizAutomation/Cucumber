@@ -27,7 +27,8 @@ public class PageSupporter {
 	//protected PutsBox mailInstance;
 	public PageSupporter(WebDriver driver) {
 		this.driver = driver;
-		//mailInstance = new PutsBox(driver);
+		////mailInstance = new PutsBox(driver);
+		//
 	}
 
 	/**

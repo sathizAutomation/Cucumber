@@ -12,10 +12,9 @@
         "steps": [
           {
             "result": {
-              "duration": 11746887200,
-              "status": "passed"
+              "status": "skipped"
             },
-            "line": 5,
+            "line": 4,
             "name": "Test URl already launched",
             "match": {
               "location": "StepDefintionn.test_URl_already_launched()"
@@ -24,10 +23,9 @@
           },
           {
             "result": {
-              "duration": 28600,
-              "status": "passed"
+              "status": "skipped"
             },
-            "line": 6,
+            "line": 5,
             "name": "user enters login credentials",
             "match": {
               "location": "StepDefintionn.user_enters_login_credentials()"
@@ -36,10 +34,52 @@
           },
           {
             "result": {
-              "duration": 810476700,
-              "status": "passed"
+              "status": "skipped"
             },
-            "line": 7,
+            "line": 6,
+            "name": "closing browser",
+            "match": {
+              "location": "StepDefintionn.closing_browser()"
+            },
+            "keyword": "Then "
+          }
+        ]
+      },
+      {
+        "line": 8,
+        "name": "Login Validation",
+        "description": "",
+        "id": "login;login-validation",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 9,
+            "name": "Test URl already launched",
+            "match": {
+              "location": "StepDefintionn.test_URl_already_launched()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 10,
+            "name": "user enters login credentials",
+            "match": {
+              "location": "StepDefintionn.user_enters_login_credentials()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "status": "skipped"
+            },
+            "line": 11,
             "name": "closing browser",
             "match": {
               "location": "StepDefintionn.closing_browser()"
