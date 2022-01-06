@@ -1,44 +1,39 @@
 package pages;
 
-import java.util.List;
-import java.util.Random;
-import java.util.concurrent.TimeUnit;
+import com.github.javafaker.Faker;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import support.DBConnection;
+import support.Settings;
+import java.util.List;
+import java.util.Random;
+import java.util.concurrent.TimeUnit;
+import java.util.logging.Logger;
 
-/**
- * 
- * @author         :Sathish
- * @since          :Sep 20, 2020
- * @filename       :PageSupporter.java
- * @version		   :1.0
- * @description    :The class to provide to common tests features.This needs to be extended by all page classes
- */
 public class PageSupporter {
+	public static Logger log = Logger.getLogger(PageSupporter.class.getName());
+	protected Settings settings = Settings.getInstance();
+	protected DBConnection dbConnection = new DBConnection();
 	WebDriverWait wait;
 	protected WebDriver driver;
-	
-	
-	
-	//protected PutsBox mailInstance;
+	protected Faker testData = new Faker();
 	public PageSupporter(WebDriver driver) {
 		this.driver = driver;
-		////mailInstance = new PutsBox(driver);
-		//
 	}
 
 	/**
-	 * 
+	 *
 	 * Method Name : waitFor
 	 * Description : To wait for an element for a specified time
-	 * Author      : Sathish
+	 * Author      : Tester
 	 * Return Types: boolean
 	 * Paramters   : PageSupporter
-	 * Date        : Nov 6, 2020
+	 * Date        : Aug 15, 2021
 	 * Version     : 1.0
 	 */
 
@@ -53,13 +48,13 @@ public class PageSupporter {
 	}
 
 	/**
-	 * 
+	 *
 	 * Method Name : waitFor
 	 * Description : To wait for a list of elements for a specified time
-	 * Author      : Sathish
+	 * Author      : Tester
 	 * Return Types: boolean
 	 * Paramters   : PageSupporter
-	 * Date        : Nov 6, 2020
+	 * Date        : Nov 6, 2017
 	 * Version     : 1.0
 	 */
 
@@ -77,10 +72,10 @@ public class PageSupporter {
 	 * 
 	 * Method Name : timeout
 	 * Description : To set the implicit wait time by passing seconds as parameter
-	 * Author      : Sathish
+	 * Author      : Tester
 	 * Return Types: void
 	 * Paramters   : PageSupporter
-	 * Date        : Nov 6, 2020
+	 * Date        : Nov 6, 2017
 	 * Version     : 1.0
 	 */
 
@@ -91,11 +86,11 @@ public class PageSupporter {
 	/**
 	 * 
 	 * Method Name : wait
-	 * Description : 
-	 * Author      : Sathish
+	 * Description : Wait for the given time period in seconds
+	 * Author      : Tester
 	 * Return Types: void
 	 * Paramters   : PageSupporter
-	 * Date        : Nov 6, 2020
+	 * Date        : Nov 6, 2017
 	 * Version     : 1.0
 	 */
 
@@ -111,10 +106,10 @@ public class PageSupporter {
 	 * 
 	 * Method Name : waitUntil
 	 * Description : This 
-	 * Author      : Sathish
+	 * Author      : Tester
 	 * Return Types: void
 	 * Paramters   : element to wait for and how long to wait for
-	 * Date        : Nov 6, 2020
+	 * Date        : Aug 15, 2021
 	 * Version     : 1.0
 	 */
 
@@ -129,31 +124,12 @@ public class PageSupporter {
 
 	/**
 	 * 
-	 * Method Name : waitUntilElementClickable
-	 * Description : This 
-	 * Author      : cog_akumari
-	 * Return Types: void
-	 * Paramters   : element to wait for and how long to wait for
-	 * Date        : Nov 6, 2020
-	 * Version     : 1.0
-	 */
-
-	public void waitUntilElementClickable(WebElement element,int seconds) {
-		try {
-			WebDriverWait wait = new WebDriverWait(driver, seconds);
-			wait.until(ExpectedConditions.elementToBeClickable(element));
-		}catch(Exception e) {
-
-		}
-	}
-	/**
-	 * 
 	 * Method Name : pageLoadWait
 	 * Description : Wait for the page to load
-	 * Author      : Sathish
+	 * Author      : Tester
 	 * Return Types: void
 	 * Paramters   : PageSupporter
-	 * Date        : Nov 6, 2020
+	 * Date        : Aug 15, 2021
 	 * Version     : 1.0
 	 */
 
@@ -182,14 +158,14 @@ public class PageSupporter {
 	 * 
 	 * Method Name : randomNumber
 	 * Description : This generates the random number,by taking the length of that number as parameter
-	 * Author      : Sathish
+	 * Author      : Tester
 	 * Return Types: String
 	 * Parameters   : Length of the random random number
-	 * Date        : Nov 6, 2020
+	 * Date        : Aug 15, 2021
 	 * Version     : 1.0
 	 */
 
-	public String randomNumber(int length) {
+	public static String randomNumber(int length) {
 		Random rand = new Random();
 		String  randomNo="";
 		for(int len = 1;len<=length;len++) {
@@ -213,10 +189,10 @@ public class PageSupporter {
 	 * 
 	 * Method Name : scrollToElement
 	 * Description : This scrolls the focus to the element being passed as the parameter
-	 * Author      : Sathish
+	 * Author      : Tester
 	 * Return Types: void
 	 * Parameters   : element 
-	 * Date        : Nov 6, 2020
+	 * Date        : Aug 15, 2021
 	 * Version     : 1.0
 	 */
 
@@ -233,10 +209,10 @@ public class PageSupporter {
 	 * 
 	 * Method Name : scrollToElement
 	 * Description : This scrolls the focus to the element being passed as the parameter and offset the height by scrolling up
-	 * Author      : Sathish
+	 * Author      : Tester
 	 * Return Types: void
 	 * Paramters   : PageSupporter
-	 * Date        : Nov 6, 2020
+	 * Date        : Aug 15, 2021
 	 * Version     : 1.0
 	 */
 
@@ -253,10 +229,10 @@ public class PageSupporter {
 	 * 
 	 * Method Name : switchToNewWindow
 	 * Description : This method switch the focus to newly opened window.
-	 * Author      : Sathish
+	 * Author      : Tester
 	 * Return Types: void
 	 * Paramters   : PageSupporter
-	 * Date        : Nov 6, 2020
+	 * Date        : Aug 15, 2021
 	 * Version     : 1.0
 	 */
 
@@ -272,10 +248,10 @@ public class PageSupporter {
 	 * 
 	 * Method Name : switchToParentWindow
 	 * Description : It changes focus to parent window
-	 * Author      : Sathish
+	 * Author      : Tester
 	 * Return Types: void
 	 * Paramters   : PageSupporter
-	 * Date        : Nov 6, 2020
+	 * Date        : Aug 15, 2021
 	 * Version     : 1.0
 	 */
 
@@ -287,6 +263,17 @@ public class PageSupporter {
 		}
 	}
 
+	/**
+	 * 
+	 * Method Name : switchToParentWindow
+	 * Description : It changes focus to parent window
+	 * Author      : Tester
+	 * Return Types: void
+	 * Paramters   : PageSupporter
+	 * Date        : Aug 15, 2021
+	 * Version     : 1.0
+	 */
+	
 	public void clickUsingJavascript(WebElement element) {
 
 		JavascriptExecutor js = (JavascriptExecutor) driver;
@@ -294,28 +281,17 @@ public class PageSupporter {
 
 	}
 
-	
-	public String clickLinkByName(String text) {
 
-		By locator1 = By.xpath("//a//*[contains(text(),'"+text+"')]");
-		waitUntil(locator1,20);
-		if(driver.findElements(locator1).size()>0) {
-			scrollToElement(driver.findElements(locator1).get(0));
-			wait(3);
-			driver.findElements(locator1).get(0).click();
-			return "Link : <pre>"+text+"</pre> is clicked";
-		}
-		
-		By locator2 = By.xpath("//a[contains(text(),'"+text+"')]");
-		waitUntil(locator2,20);
-		if(driver.findElements(locator2).size()>0) {
-			scrollToElement(driver.findElements(locator2).get(0));
-			wait(3);
-			driver.findElements(locator2).get(0).click();
-			return "Link : <pre>"+text+"</pre> is clicked";
-		}
-		return "Link : <pre>"+text+"</pre> doesn't exist";
-	}
+	/**
+	 * 
+	 * Method Name : switchToParentWindow
+	 * Description : It changes focus to parent window
+	 * Author      : Tester
+	 * Return Types: void
+	 * Paramters   : PageSupporter
+	 * Date        : Aug 15, 2021
+	 * Version     : 1.0
+	 */
 	
 	public void waitForText(By element,int seconds,String text) {
 		try {
@@ -324,5 +300,37 @@ public class PageSupporter {
 		}catch(Exception e) {
 
 		}
+	}
+
+	/**
+	 * 
+	 * Method Name : selectDropdownByValue
+	 * Description : It selects drop down values given the value of the dropdown
+	 * Author      : Tester
+	 * Return Types: void
+	 * Paramters   : PageSupporter
+	 * Date        : Aug 15, 2021
+	 * Version     : 1.0
+	 */
+	
+	public void selectDropdownByValue(WebElement element,String value) {
+		Select select = new Select(element);
+		select.selectByValue(value);
+	}
+
+	/**
+	 * 
+	 * Method Name : selectDropdownByVisibleText
+	 * Description : It selects drop down values given the visible text of the dropdown
+	 * Author      : Tester
+	 * Return Types: void
+	 * Paramters   : PageSupporter
+	 * Date        : Aug 15, 2021
+	 * Version     : 1.0
+	 */
+	
+	public void selectDropdownByVisibleText(WebElement element,String text) {
+		Select select = new Select(element);
+		select.selectByVisibleText(text);
 	}
 }
