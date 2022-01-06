@@ -15,7 +15,7 @@ public class Settings {
 
 	private String testRunner;
 	private String elementPropertiesDir;
-
+	private String reportDir;
 	private String reportDetailsDir;
 	private String JsonFilesDir;
 	private String XMLFilesDir;
@@ -240,11 +240,11 @@ public class Settings {
 	 * Return types : String
 	 * Description  :
 	 */
-	public String getReportDetailsDir() {
-		if(reportDetailsDir==null){
-			setReportDetailsDir();
+	public String getReportsDir() {
+		if(setReportsDir==null){
+			setReportsDir();
 		}
-		return reportDetailsDir;
+		return reportDir;
 	}
 	/**
 	 * 
@@ -252,9 +252,11 @@ public class Settings {
 	 * Return types : void
 	 * Description  :
 	 */
-	public void setReportDetailsDir() {
-		this.reportDetailsDir = getProjectPath()+System.getProperty("file.separator")+"report-resources"+System.getProperty("file.separator")+"report-details"+System.getProperty("file.separator");
+	public void setReportsDir() {
+		this.reportDir = getProjectPath()+System.getProperty("file.separator")+"report"+System.getProperty("file.separator");
 	}
+
+
 	/**
 	 * 
 	 * Method name  : getJsonFilesDir
