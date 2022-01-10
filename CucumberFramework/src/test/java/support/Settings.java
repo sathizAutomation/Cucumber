@@ -241,7 +241,7 @@ public class Settings {
 	 * Description  :
 	 */
 	public String getReportsDir() {
-		if(setReportsDir==null){
+		if(reportDir==null){
 			setReportsDir();
 		}
 		return reportDir;
